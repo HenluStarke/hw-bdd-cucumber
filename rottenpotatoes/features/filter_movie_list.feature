@@ -22,20 +22,35 @@ Background: movies have been added to database
   And  I am on the RottenPotatoes home page
 
 Scenario: restrict to movies with 'PG' or 'R' ratings
- # Given I am on the RottenPotatoes home page
- # When I uncheck all checkboxes besides 'PG' and 'R'
- # And I select the "Refresh" button
- # Then I should be on the RottenPotatoes home page
- # And I should see the movie titled 'The Terminator'
- # And I should see the movie titled 'When Harry Met Sally'
- # And I should see the movie titled 'Amelie'
- # And I should see the movie titled 'The Incredibles'
- # And I should see the movie titled 'Raiders of the Lost Ark'
- # And I should not see the movie titled 'Aladdin'
- # And I should not see the movie titled 'The Help'
- # And I should not see the movie titled 'Chocolat'
- # And I should not see the movie titled '2001: A Space Odyssey'
- # And I should not see the movie titled 'Chicken Run'
+  Given I am on the RottenPotatoes home page
+  When I uncheck ratings "PG-13"
+  And I uncheck ratings "G"
+  And I check ratings "PG"
+  And I check ratings "R"
+  #And I press "Refresh"
+  #Then I should be on the RottenPotatoes home page
+  #And I should see The Terminator
+  #And I should see When Harry Met Sally
+  #And I should see Amelie
+  #And I should see The Incredibles
+  #And I should see Raiders of the Lost Ark
+  #And I should not see Aladdin
+  #And I should not see The Help
+  #And I should not see Chocolat
+  #And I should not see 2001: A Space Odyssey
+  #And I should not see Chicken Run
+
+  #Then I should be on the RottenPotatoes home page
+  #And I should see the movie titled 'The Terminator'
+  #And I should see the movie titled 'When Harry Met Sally'
+  #And I should see the movie titled 'Amelie'
+  #And I should see the movie titled 'The Incredibles'
+  #And I should see the movie titled 'Raiders of the Lost Ark'
+  #And I should not see the movie titled 'Aladdin'
+  #And I should not see the movie titled 'The Help'
+  #And I should not see the movie titled 'Chocolat'
+  #And I should not see the movie titled '2001: A Space Odyssey'
+  #And I should not see the movie titled 'Chicken Run'
   # enter step(s) to check the 'PG' and 'R' checkboxes
   # enter step(s) to uncheck all other checkboxes
   # enter step to "submit" the search form on the homepage
