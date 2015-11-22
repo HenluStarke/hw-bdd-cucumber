@@ -28,29 +28,18 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   And I check ratings "PG"
   And I check ratings "R"
   And I press "Refresh"
-  #Then I should be on the RottenPotatoes home page
+  Then I should be on the RottenPotatoes home page
   And I should see "The Terminator"
-  #And I should see "When Harry Met Sally"
-  #And I should see "Amelie"
-  #And I should see "The Incredibles"
-  #And I should see "Raiders of the Lost Ark"
-  #And I should not see "Aladdin"
-  #And I should not see "The Help"
-  #And I should not see "Chocolat"
-  #And I should not see "2001: A Space Odyssey"
-  #And I should not see "Chicken Run"
+  And I should see "When Harry Met Sally"
+  And I should see "Amelie"
+  And I should see "The Incredibles"
+  And I should see "Raiders of the Lost Ark"
+  And I should not see "Aladdin"
+  And I should not see "The Help"
+  And I should not see "Chocolat"
+  And I should not see "2001: A Space Odyssey"
+  And I should not see "Chicken Run"
 
-  #Then I should be on the RottenPotatoes home page
-  #And I should see the movie titled 'The Terminator'
-  #And I should see the movie titled 'When Harry Met Sally'
-  #And I should see the movie titled 'Amelie'
-  #And I should see the movie titled 'The Incredibles'
-  #And I should see the movie titled 'Raiders of the Lost Ark'
-  #And I should not see the movie titled 'Aladdin'
-  #And I should not see the movie titled 'The Help'
-  #And I should not see the movie titled 'Chocolat'
-  #And I should not see the movie titled '2001: A Space Odyssey'
-  #And I should not see the movie titled 'Chicken Run'
   # enter step(s) to check the 'PG' and 'R' checkboxes
   # enter step(s) to uncheck all other checkboxes
   # enter step to "submit" the search form on the homepage
@@ -58,4 +47,8 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to ensure that other movies are not visible
 
 Scenario: all ratings selected
+  Given I am on the RottenPotatoes home page
+  When I check the following ratings: R,G,PG,PG-13
+  Then I should see all the movies
+
   # see assignment
