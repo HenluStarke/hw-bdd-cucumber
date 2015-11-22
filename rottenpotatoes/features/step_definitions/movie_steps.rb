@@ -22,7 +22,7 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
 end
 
 When /^(?:|I )check ratings "([^"]*)"$/ do |field|
-  uncheck("ratings[#{field}]")
+  check("ratings[#{field}]")
 end
 
 When /^(?:|I )uncheck ratings "([^"]*)"$/ do |field|
