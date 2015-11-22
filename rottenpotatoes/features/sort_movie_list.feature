@@ -30,4 +30,5 @@ Scenario: sort movies alphabetically
 Scenario: sort movies in increasing order of release date
   When I follow "Release Date"
   Then I should be on the RottenPotatoes home page
+  And I should see "The Terminator" before "The Help"
   # your steps here

@@ -19,9 +19,11 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
   order = {e1 => '', e2 => ''}
+a = Regexp.new("^(#{e1.gsub(/\s+/, '\s')})\\s*.*")
+b = Regexp.new("^(#{e2.gsub(/\s+/, '\s')})\\s*.*")
   page.all('table#movies tbody tr').each do | td|
-      order[e1] = td.path.match(/.*\[(\d)\]$/)[1] unless td.text.match(/^(#{e1})\s*.*/).nil?
-      order[e2] = td.path.match(/.*\[(\d)\]$/)[1] unless td.text.match(/^(#{e2})\s*.*/).nil?
+      order[e1] = td.path.match(/.*\[(\d+)\]$/)[1] unless td.text.match(a).nil?
+      order[e2] = td.path.match(/.*\[(\d+)\]$/)[1] unless td.text.match(b).nil?
   end
   expect(order[e1].to_i).to be < order[e2].to_i
 end

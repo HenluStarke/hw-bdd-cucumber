@@ -22,7 +22,6 @@ Background: movies have been added to database
   And  I am on the RottenPotatoes home page
 
 Scenario: restrict to movies with 'PG' or 'R' ratings
-  Given I am on the RottenPotatoes home page
   When I uncheck ratings "PG-13"
   And I uncheck ratings "G"
   And I check ratings "PG"
@@ -47,7 +46,6 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to ensure that other movies are not visible
 
 Scenario: all ratings selected
-  Given I am on the RottenPotatoes home page
   When I check the following ratings: R,G,PG,PG-13
   Then I should see all the movies
 
