@@ -22,6 +22,20 @@ Background: movies have been added to database
   And  I am on the RottenPotatoes home page
 
 Scenario: restrict to movies with 'PG' or 'R' ratings
+ # Given I am on the RottenPotatoes home page
+ # When I uncheck all checkboxes besides 'PG' and 'R'
+ # And I select the "Refresh" button
+ # Then I should be on the RottenPotatoes home page
+ # And I should see the movie titled 'The Terminator'
+ # And I should see the movie titled 'When Harry Met Sally'
+ # And I should see the movie titled 'Amelie'
+ # And I should see the movie titled 'The Incredibles'
+ # And I should see the movie titled 'Raiders of the Lost Ark'
+ # And I should not see the movie titled 'Aladdin'
+ # And I should not see the movie titled 'The Help'
+ # And I should not see the movie titled 'Chocolat'
+ # And I should not see the movie titled '2001: A Space Odyssey'
+ # And I should not see the movie titled 'Chicken Run'
   # enter step(s) to check the 'PG' and 'R' checkboxes
   # enter step(s) to uncheck all other checkboxes
   # enter step to "submit" the search form on the homepage
