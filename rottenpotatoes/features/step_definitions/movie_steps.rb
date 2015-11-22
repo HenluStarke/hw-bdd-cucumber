@@ -18,7 +18,12 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  fail "Unimplemented"
+  order = {e1 => '', e2 => ''}
+  page.all('table#movies tbody tr').each do | td|
+      order[e1] = td.path.match(/.*\[(\d)\]$/)[1] unless td.text.match(/^(#{e1})\s*.*/).nil?
+      order[e2] = td.path.match(/.*\[(\d)\]$/)[1] unless td.text.match(/^(#{e2})\s*.*/).nil?
+  end
+  expect(order[e1].to_i).to be < order[e2].to_i
 end
 
 When /^(?:|I )check ratings "([^"]*)"$/ do |field|
